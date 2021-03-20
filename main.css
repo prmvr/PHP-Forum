@@ -1,0 +1,656 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: Roboto;
+    margin-bottom: 8rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.error {
+    text-align: center;
+    width: 100%;
+    color: red;
+    font-weight: bold;
+    margin-bottom: .7rem;
+
+}
+
+.signup {
+    text-align: center;
+    padding: 1rem;
+    border-radius: .8rem;
+    width: 25rem;
+    margin: auto;
+    margin-left: 0rem;
+    /*       background-color:white;*/
+    /*       box-shadow: rgba(0,0,0,.4) 0px 0px 5px 0px;*/
+}
+
+form {
+    position: relative;
+    height: auto;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 20rem;
+    padding: 1rem;
+    display: flex;
+    margin: auto;
+    margin-bottom: .5rem;
+    border: 2px solid lightgray;
+    border-radius: .25rem;
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+form input:focus {
+    border: 2px solid #1d3557;
+}
+
+form input:focus::placeholder {
+    color: transparent;
+}
+
+form input[type="checkbox"],
+form label {
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+form input[type="checkbox"] {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+
+}
+
+form button {
+    position: relative;
+    background-color: #e63946;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    padding: .8rem;
+    justify-content: center;
+    margin-top: .5rem;
+    margin-bottom: 0;
+    width: 90%;
+    cursor: pointer;
+
+}
+
+.signup-header {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.signup-text {
+    margin: 0;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    text-align: left;
+    border-bottom: 2px solid lightgray;
+}
+
+.sub {
+    color: black;
+}
+
+.green {
+    text-align: left;
+    margin-left: 2rem;
+    display: none;
+    color: #8ac926;
+    font-weight: bold;
+}
+
+.input-blank {
+    display: block;
+    outline: 0px;
+    border: 2px solid red !important;
+    z-index: 1;
+}
+
+.input-green {
+    border: 2px solid green !important;
+}
+
+.err {
+    opacity: 0;
+    position: relative;
+}
+
+.err::after {
+    content: "!";
+    position: absolute;
+    top: -3rem;
+    left: 8.7rem;
+    font-size: 25px;
+    background-color: red;
+    color: white;
+    border-radius: 5rem;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    z-index: 1;
+    justify-content: center;
+    margin: auto;
+    align-content: center;
+    transform: scale(.70);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(.70) translateX(-1rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(.70) translateX(0rem);
+        opacity: 1;
+    }
+}
+
+form div {
+    position: relative;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 8%;
+    justify-content: space-around;
+}
+
+.cta-signup {
+    margin: auto;
+}
+
+.cta-signup h1 {
+    margin: 0rem;
+    font-size: 60px;
+    color: #e63946;
+}
+
+.cta-signup p {
+    margin: 0;
+    font-size: 30px;
+}
+
+.nav-login input {
+    width: 10rem;
+    padding: .5rem !important;
+}
+
+.login-text {
+    color: darkgray;
+    margin-top: 0rem;
+    text-decoration: underline;
+    padding: 1rem;
+}
+
+.checkbox-sub {
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    margin-right: 1.1rem;
+    margin-bottom: .5rem;
+}
+
+.user-login {
+    width: 40%;
+    margin: auto;
+    padding: 2rem;
+    margin-top: 10%;
+    text-align: center;
+    background-color: white;
+    border-radius: .5rem;
+    justify-content: center;
+    align-content: center;
+    box-shadow: rgba(0, 0, 0, .4) 5px 5px 10px;
+}
+
+.user-login h2 {
+    text-align: center;
+    margin: .5rem;
+}
+
+.user-login .box {
+    margin-bottom: 1rem;
+}
+
+.login {
+    margin: auto;
+    width: 8rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.forgot-pass {
+    color: #00fa;
+    text-decoration: underline;
+    width: 100%;
+}
+
+
+.navbar {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 1.5rem;
+    background-color: #343a40;
+    text-align: right;
+}
+
+.user-pic {
+    position: absolute;
+    left: 2.5rem;
+    top: .5rem;
+}
+
+.nav {
+    width: 100%;
+    margin: auto;
+    color: white;
+    padding: 1rem;
+}
+
+.nav:hover {
+    color: gray;
+    transition: 0.3s ease color;
+}
+
+.nav-button-logout {
+    border: 2px solid #e63946;
+    border-radius: .25rem;
+    color: #e63946;
+    padding: .25rem;
+    margin: 2rem;
+    margin-left: auto;
+
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.follow-tag {
+    transform: scale(.8);
+    vertical-align: super;
+    font-size: 13px;
+    text-align: center;
+    border: 2px solid #80b918;
+    border-radius: .25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: .20rem;
+    color: #80b918;
+    margin: 0;
+    margin-right: auto;
+}
+
+.username {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    list-style: none;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.a-btn,
+.r-btn,
+.reject {
+    margin-left: auto;
+    padding: .5rem;
+    width: 8rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: .4rem;
+    color: white;
+    border: 1px solid;
+}
+
+.a-btn {
+    background-color: #343a40;
+}
+
+.accept {
+    background-color: #343a40;
+}
+
+.r-btn {
+    background-color: #e63946;
+    color: white;
+}
+
+.header {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 2rem;
+    padding-bottom: .5rem;
+    margin-top: 3rem;
+    text-align: left;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+}
+
+.alert {
+    color: #06d6a0;
+}
+
+.gray {
+    border-color: #adb5bd;
+    color: #adb5bd;
+}
+
+.empty {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    color: #adb5bd;
+}
+
+.reject {
+    margin-left: .5rem;
+    color: white;
+    border: 1px solid #e63946;
+    color: #e63946;
+}
+
+.reject:hover {
+    background-color: #e63946;
+    color: white;
+    transition: 0.3s ease all;
+}
+
+.user-profile {
+    width: 70%;
+    margin: auto;
+    background-color: lightgray;
+    text-align: center;
+    padding: 5rem;
+    margin-bottom: 4rem;
+}
+
+.user-profile textarea {
+    width: 90%;
+    font-size: 14px;
+    font-family: Roboto;
+    resize: none;
+    resize: vertical;
+    padding-bottom: 10rem;
+}
+
+.user-profile h3 {
+    margin: 3rem;
+}
+
+.user-profile button {
+    width: 10rem;
+}
+
+.pfp-main {
+    margin-right: auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1%;
+    object-fit: cover;
+    margin: 0;
+    border: 2px solid lightgray;
+    margin-right: 1rem;
+}
+.pfp-icon{
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius:.4rem;
+    object-fit: cover;
+    margin-right: 0rem;
+}
+.msg-holder{
+    margin: auto;
+    margin-bottom: .5rem;
+    padding: 0;
+    display: flex;
+    position: relative;
+    margin-top: 2rem;
+    width: 60%;
+ 
+}
+.form-bio {
+    margin: auto;
+    width: 90%;
+    background-color: white;
+}
+
+.bio-container {
+    font-size: 18px;
+    background-color: white;
+    border-radius: .5rem;
+    border-bottom: 2px solid lightgray;
+    padding: 5rem;
+    margin: 2rem;
+}
+
+.user-container {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    padding: 2rem;
+    width: 45%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+
+.create {
+    background-color: #e63946;
+    color: white;
+    border-radius: .5rem;
+    padding: .6rem;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+}
+
+.create:hover {
+    color: lightgray;
+    transition: 0.3s ease all;
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+.radio {
+    display: inline-block;
+    position: relative;
+    -webkit-appearance: none;
+    background-color: black;
+    align-items: center;
+    width: 8rem;
+    height: 3rem;
+    text-align: center;
+    white-space: nowrap;
+    margin: 0rem;
+    vertical-align: middle;
+}
+
+.radio::after {
+    content: "Whisper 💬";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;
+    bottom: 0;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+.radio:first-of-type::after {
+    content: "Public 🗨️";
+}
+
+input:focus {
+    outline: none;
+}
+
+.radio:focus {
+    outline: none;
+    border: none;
+}
+
+.radio:checked {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #e63946;
+    border: 0px solid transparent;
+}
+
+.message {
+    width: 80%;
+    margin: auto;
+    margin-left: 0;
+    padding: .5rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
+
+
+.private{
+    color: #023e8a;   
+}
+
+.date {
+    font-size: 12px;
+    color:gray;
+    
+}
+.user-tag{
+    font-weight: bold;
+    position: absolute;
+    top:0;
+}
+.user-tag .date{
+    font-weight: normal;
+}
+.user-tag a{
+    font-weight: bolder;
+    color: black;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.moderator {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    font-weight: bolder;
+    color: #e63946;
+    font-style: normal;
+}
+
+.moderator:after {
+    content: '';
+    position: absolute;
+    top: .0rem;
+    left: 2rem;
+    background-image: url(mod.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: .6rem;
+}
+.moderator .date{
+    font-weight: normal;
+    margin-left: 1.35rem;
+}
+.erase{
+    color:lightgray;
+    float: right;
+}
+.erase:hover{
+color:#e63946;
+}
+.msg-form-holder{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-text input[type="text"]{
+    width:90%;
+    height: 3rem;
+    margin-top: .5rem;
+    border:none;
+    background-color: white;
+}
+
+.box-text button{
+    height: 3rem;
+    color: white;
+    font-weight: bold;
+    background-color: #403d39;
+    border: 0px;
+    margin-left: -.2rem;
+/*    border-radius: 0rem 1rem 1rem 0rem;*/
+    border-radius: 0;
+    z-index: 2;
+}
+button:focus{
+    outline: none;
+    border:none;
+}
+.radio-btns{
+    width: 25%;
+    margin-left: -1rem;
+    text-align: center;
+}
+.radio-btns [type="radio"]{
+    background-color: lightgray;
+    color:black;
+    width: 40%;
+    margin-right: -.21rem;
+}
+.radio-btns [type="radio"]:checked{
+    background-color: black;
+    color:white;
+    transition: 0.3s ease all;
+}
+.box-text{
+    display: flex;
+    width: 100%;
+}
+.profile-holder{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.profile-holder p {
+    width: 60%;
+    margin-bottom: 3rem;
+}
