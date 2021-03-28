@@ -22,7 +22,7 @@ else{
 }
 echo "<h3 class='header'> $name2 Profile</h3>";
 showProfile($view);
-$pfp = showPfp($view);
+$pfp = showPfp($user);
 }
 echo <<<_END
 <form method="post" action="messages.php?view=$view" class='header msg-form-holder'>
