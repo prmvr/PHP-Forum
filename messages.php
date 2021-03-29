@@ -57,7 +57,7 @@ $moderators[$j] = $row['user'];
 for($i = 0; $i < $num; ++$i){
 	$row = $result->fetch_array(MYSQLI_ASSOC);
 	if($row['pm'] == 0 || $row['auth'] == $user || $row['recip'] == $user) 
-	$date = date('D M\ g:ia', $row['time']);
+	$date = formatDate($row['time']);
 	if(in_array($row['auth'], $moderators)){
 		$user_style = "moderator";
 	} else $user_style = "user-tag";
@@ -67,7 +67,7 @@ for($i = 0; $i < $num; ++$i){
 	$pfp_icon = showPfpIcon($row['auth']);
 	if($row['pm'] == 0)
 	echo "<div class='msg-holder'>$pfp_icon <p class='message'>
-	<a class='$user_style' href='messages.php?view='".$row['auth']."'>" 
+	<a class='$user_style' href='messages.php?view=".$row['auth']."'>" 
 	. $row['auth'] ."<span class='date'> $date </span></a>".$row['message'] . $eraseSpan."</p></div>";
 	else
 	if($row['recip'] == $user || $row['auth'] == $user)
@@ -82,9 +82,15 @@ function showPfpIcon($user){
       return "<img class='pfp-icon' src='blank.png'>";
     }
 }
-	// this is where you left off ^
-	//3 TODO make the profile ref go to the profile.php instead of functions.php so that it displays on a new page
-	//4 TODO fix the offset on friends/members page of nav bar
-	//5 TODO adjust the profile page and make it look nicer!
-	// fix the spacing of the sent on the friends page so it is next to name 
+function formatDate($timeStamp){
+	$timeStampSeconds = ((time() - $timeStamp));
+	$interval = floor($timeStampSeconds / 86400);	
+	// return "$interval";
+	if($interval < 1) return "Posted Today";
+	$interval = floor($timeStampSeconds / 172800);
+	if($interval < 1) return "Posted Yesterday";
+	$interval = floor($timeStampSeconds / 604800);
+	if($interval < 1) return  date('l\ g:ia', $timeStamp);
+	return date('D M\ g:ia', $timeStamp);
+	}
 ?>
